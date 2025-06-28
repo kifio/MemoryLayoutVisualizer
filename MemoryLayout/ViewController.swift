@@ -28,8 +28,8 @@ final class ViewController: NSViewController {
     
     // Структура, MemoryLayout которой мы рассматриваем
     struct Foo {
-        let b: Int8
         let c: Int16
+        let b: Int8
     }
     
     // Заголовки режимов отображения
@@ -93,7 +93,7 @@ final class ViewController: NSViewController {
 final class RepresentationView: NSView {
     
     private let byteSpacing: CGFloat = 10
-    private let byteY: CGFloat = 200
+    private let byteY: CGFloat = 40
     
     var memoryLayout: MemoryLayoutRepresentation?
     
@@ -151,7 +151,7 @@ final class RepresentationView: NSView {
 
             for i in 0..<(memoryLayout.stride / memoryLayout.alignment) {
                 let path = NSBezierPath()
-                let start = NSPoint(x: padding + (CGFloat(i) * alignmentWidth) + (CGFloat(i) * byteSpacing), y: 190)
+                let start = NSPoint(x: padding + (CGFloat(i) * alignmentWidth) + (CGFloat(i) * byteSpacing), y: 20)
                 let finish = NSPoint(x: start.x + alignmentWidth, y: start.y)
                 path.move(to: start)
                 path.line(to: finish)
